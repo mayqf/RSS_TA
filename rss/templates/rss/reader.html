@@ -1,0 +1,59 @@
+{% extends 'rss/base.html' %}
+
+ 
+{% block body %}
+
+<br />
+<form class='form-inline'>
+
+<div class='form-group mx-sm-3 mb-2'>
+<label for='inputPassword2' class='sr-only'>Password</label>
+<input type='text' class='form-control' placeholder='Insert your link here!' name='url'>
+</div>
+
+<button type='submit' class='btn btn-primary mb-2'>Search</button>
+
+</form>
+
+{% if feed %}
+
+<h2>{{ feed.feed.title }}</h2>
+
+{% if feed.entries %}
+
+{% for entry in feed.entries %}
+
+<div class='card'>
+
+<div class='card-body'>
+<h5 class='card-title'>Headline: {{ entry.title }}</h5>
+<p class='card-text'>Description: {{ entry.description }}</p>
+<a href='{{ entry.link }}' class='btn btn-primary'>Visit Link</a>
+</div>
+
+</div><p>{{ entry.published }}</p>
+
+ 
+
+
+{% endfor %}
+
+{% endif %}
+
+{% else %}
+
+<br />
+
+<p>Please enter your favorite RSS feed link above!</p>
+
+
+{% endif %}
+
+
+
+{{ feed2 }}
+
+ 
+
+
+{% endblock %}
