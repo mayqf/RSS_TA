@@ -9,7 +9,8 @@ def index(request):
     if request.GET.get("url"):
         url = request.GET["url"] #Getting URL
         feed = feedparser.parse(url) #Parsing XML data
-        print(len(feed))
+        print(feed)
+        
     else:
         feed = None
         print('else')
