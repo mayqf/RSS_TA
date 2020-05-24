@@ -7,15 +7,15 @@ def index(request):
     if hasattr(ssl, '_create_unverified_context'):
         ssl._create_default_https_context = ssl._create_unverified_context
     if request.GET.get("url"):
-        #print("request:", request.GET)
+        print("url:", request.GET.get("url"))
         url = request.GET["url"] #Getting URL
-        feed = feedparser.parse(url) #Parsing XML data
+        result = feedparser.parse(url) #Parsing XML data
         #print(feed)
         
     else:
-        feed = None
+        result = None
         print('else')
 
     return render(request, "reader.html", {
-        "feed" : feed,
+        "result" : result,
     })

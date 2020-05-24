@@ -5,29 +5,29 @@
 
 <br />
 <form class='form-inline mb-4'>
-
     <div class='form-group mb-2 ml-auto'>
         <input type='text' class='form-control' placeholder='Insert your link here!' name='url'>
     </div>
     <button type='submit' class='btn btn-primary mb-2 mr-auto'>Search</button>
 </form>
 
-{% if feed %}
+{% if result %}
 
-<h2 class="text-center ">{{ feed.feed.title }}</h2>
+<h2 class="text-center ">{{ result.feed.title }}</h2>
+<br />
 
-{% if feed.entries %}
+{% if result.entries %}
 
 
     <div class="container">
         <div class="row">
-        {% for entry in feed.entries %}
+        {% for entry in result.entries %}
         
         <div class="col-6" >
             <div class='card mb-2 position-relative' style="height:400px;">
                 <div class='card-body'>
-                    <h5 class='card-title'>Headline: {{ entry.title }}</h5>
-                    <p class='card-text'>Description: {{ entry.description }}</p>
+                    <h5 class='card-title'>{{ entry.title }}</h5>
+                    <p class='card-text'>{{ entry.description }}</p>
                     
                     <div class="position-absolute w-100" style="bottom:0; right:0;" >
                         <div class="card-footer">
