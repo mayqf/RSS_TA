@@ -4,58 +4,51 @@
 {% block body %}
 
 <br />
-<form class='form-inline'>
+<form class='form-inline mb-4'>
 
-<div class='form-group mx-sm-3 mb-2'>
-<input type='text' class='form-control' placeholder='Insert your link here!' name='url'>
-</div>
-
-<button type='submit' class='btn btn-primary mb-2'>Search</button>
-
+    <div class='form-group mb-2 ml-auto'>
+        <input type='text' class='form-control' placeholder='Insert your link here!' name='url'>
+    </div>
+    <button type='submit' class='btn btn-primary mb-2 mr-auto'>Search</button>
 </form>
 
 {% if feed %}
 
-<h2>{{ feed.feed.title }}</h2>
+<h2 class="text-center ">{{ feed.feed.title }}</h2>
 
 {% if feed.entries %}
 
 
-<div class="container">
-    <div class="row">
-    {% for entry in feed.entries %}
-    
-    <div class="col-6" >
-    
-    
-    <div class='card ' style="height: 400px;">
-        <div class='card-body'>
-            <h5 class='card-title'>Headline: {{ entry.titsle }}</h5>
-            <p class='card-text'>Description: {{ entry.description }}</p>
-            <p>{{ entry.published|slice:22 }}</p>
-            <br>
-            <a href='{{ entry.link }}' class='btn btn-primary'>Visit Link</a>
+    <div class="container">
+        <div class="row">
+        {% for entry in feed.entries %}
+        
+        <div class="col-6" >
+            <div class='card mb-2 position-relative' style="height:400px;">
+                <div class='card-body'>
+                    <h5 class='card-title'>Headline: {{ entry.title }}</h5>
+                    <p class='card-text'>Description: {{ entry.description }}</p>
+                    
+                    <div class="position-absolute w-100" style="bottom:0; right:0;" >
+                        <div class="card-footer">
+                            <small >{{ entry.published|slice:22 }}</small>
+                            <a href='{{ entry.link }}' class='btn btn-primary float-right '>Visit Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        {% endfor %}
     </div>
-    </div>
-    {% endfor %}
-     
-
-</div>
     
-
-
 {% endif %}
 
 {% else %}
 
-<br />
-
-<p>Please enter your favorite RSS feed link above!</p>
-
+    <br>
+    <p class="text-center">Please enter your favorite RSS feed link above!</p>
 
 {% endif %}
-
 
 
 {% endblock %}
