@@ -16,6 +16,6 @@ def index(request):
         feed = None
         print('else')
 
-    return render(request, "rss/reader.html", {
+    return render(request, "reader.html", {
         "feed" : feed,
     })

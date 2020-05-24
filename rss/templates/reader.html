@@ -1,4 +1,4 @@
-{% extends 'rss/base.html' %}
+{% extends 'base.html' %}
 
  
 {% block body %}
@@ -32,7 +32,7 @@
                     <div class="position-absolute w-100" style="bottom:0; right:0;" >
                         <div class="card-footer">
                             <small >{{ entry.published|slice:22 }}</small>
-                            <a href='{{ entry.link }}' class='btn btn-primary float-right '>Visit Link</a>
+                            <a href='{{ entry.link }}' class='btn btn-primary float-right ' style="bottom:50px;">More Info</a>
                         </div>
                     </div>
                 </div>
