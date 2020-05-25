@@ -27,8 +27,9 @@
             <div class='card mb-2 position-relative' style="height:400px;">
                 <div class='card-body'>
                     <h5 class='card-title'>{{ entry.title }}</h5>
-                    <p class='card-text'>{{ entry.description }}</p>
-                    
+                    <p class='card-text'>{{ entry.summary }}</p>
+                    <img alt="feed" src={{ entry.links.1.href }}
+            width="300" height="300">
                     <div class="position-absolute w-100" style="bottom:0; right:0;" >
                         <div class="card-footer">
                             <small >{{ entry.published|slice:22 }}</small>
