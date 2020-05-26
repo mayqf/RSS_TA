@@ -1,5 +1,6 @@
-{% extends 'base.html' %} {% block body %}
+{% extends 'base.html' %} 
 
+{% block body %}
 <form class="form-inline my-4">
   <div class="form-group mx-auto">
     <input
@@ -55,10 +56,10 @@
     {% endfor %}
   </div>
 
-  {% endif %} {% else %}
-
+{% endif %} 
+{% else %}
   <br />
   <p class="text-center">Please enter your favorite RSS feed link above!</p>
-
-  {% endif %} {% endblock %}
+{% endif %} 
+{% endblock %}
 </div>
