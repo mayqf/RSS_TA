@@ -1,1 +1,1 @@
-web: gunicorn btre.wsgi --log-file -
+web: gunicorn rssreader.wsgi --log-file -
