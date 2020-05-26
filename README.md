@@ -1,3 +1,3 @@
 DJANGO-RSS PROJECT
 
-It is a real rss reader project with feedparser
+It is a rss reader project with feedparser
