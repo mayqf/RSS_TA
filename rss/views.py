@@ -10,7 +10,7 @@ def index(request):
         #print("url:", request.GET.get("url"))
         url = request.GET["url"] 
         result = feedparser.parse(url) #Parsing XML data
-        #print(result.entries)
+        print(result.entries)
         
     else:
         result = None
